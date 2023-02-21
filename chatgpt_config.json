@@ -1,0 +1,5 @@
+{
+    "session_token": "<grab it from your cookies>",
+    "access_token": "<grab it here: https://chat.openai.com/api/auth/session>",
+    "paid": false
+}
