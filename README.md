@@ -1,3 +1,5 @@
+# ⚠️ WILL BE UPDATED SOON™ ☣️🦟
+OpenAI released an official ChatGPT endpoint API, which means that roughly half of the code needs to be revamped to support the official API endpoints. The current code will be moved into a separate branch once development on the new bot has started (or well, pushed).
 # ThreadGPT
 "oh wow, another ChatGPT Discord Bot"
 
