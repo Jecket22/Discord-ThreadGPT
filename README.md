@@ -1,13 +1,13 @@
 # ThreadGPT
 "oh wow, another ChatGPT Discord Bot"
 
-This utilizes [revChatGPT](https://github.com/acheong08/ChatGPT/) to run a fairly simple Discord Bot that can split up conversation into threads. Hence the name! (im a genius)
+This utilizes [revChatGPT](https://github.com/acheong08/ChatGPT/) to run a fairly simple Discord Bot that can split up each conversation into separate threads. Hence the name! (im a genius)
 
 ## Configuration
-Edit `.env` accordingly.
-`.env` contains your Bot token and your [OpenAI API key](https://platform.openai.com/account/api-keys). Example:
+Edit `.env` accordingly.  
+This config contains your Bot token and your [OpenAI API key](https://platform.openai.com/account/api-keys). Example:
 ```env
-bot_token=cWhhcj8h...
+bot_token=MTc3MDFubw...
 openai_api_key=sk_d2VlZA...
 ```
 `config.json` contains various settings, such as file/folder locations for storing conversations and the base-prompt.  
