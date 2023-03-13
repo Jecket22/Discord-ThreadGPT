@@ -77,10 +77,10 @@ def to_thread(func: typing.Callable) -> typing.Coroutine:
 # Error Handling at its finest (wrong)
 def errHandler(e):
     print(f"Error occured while asking ChatGPT: {e}\n\n{traceback.format_exc()}") # To Console
-    #return ":warning: An error occured. The error has been logged." # To Discord
+    return ":warning: An error occured. The error has been logged." # To Discord
     # Alternatively, you can use the following line to send the error to the channel.
     # ...although this could reveal sensitive information (such as the execution path)
-    return f":warning: {e}\n\n```{traceback.format_exc()[:1900]}```" # To Discord
+    #return f":warning: {e}\n\n```{traceback.format_exc()[:1900]}```" # To Discord
 
 # Initialize Discord
 import discord
@@ -143,9 +143,9 @@ async def discordAskGPT(msg: discord.Message | discord.InteractionMessage, query
         response = await gptAsk(query, role, str(channel.id))
         remaining = []
         if len(response) >= (2000):
-            remaining = [response[(2000):(4000)], response[(4000):(6000)]] # this sucks
+            remaining = [response[(1999):(3999)], response[(4000):(5999)]] # this sucks
 
-        await msg.edit(content=f"`{query}`\n{response[:(2000)]}")
+        await msg.edit(content=f"`{query}`\n{response[:(1999)]}")
         for remainder in remaining:
             if remainder != "":
                 await channel.send(remainder)
