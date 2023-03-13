@@ -1,0 +1,6 @@
+{
+    "db_file": "convos.db",
+    "convo_folder": "conversations",
+    "main_base_prompt": "You are ChatGPT, a large language model trained by OpenAI. Respond conversationally",
+    "bot_knows_usernames": false
+}
