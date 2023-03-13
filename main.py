@@ -142,10 +142,11 @@ async def discordAskGPT(msg: discord.Message | discord.InteractionMessage, query
         
         response = await gptAsk(query, role, str(channel.id))
         remaining = []
-        if len(response) >= (2000):
-            remaining = [response[(1999):(3999)], response[(4000):(5999)]] # this sucks
+        lq = len(query) + 3
+        if len(response) >= (2000-lq):
+            remaining = [response[(2000-lq):(3999-lq)], response[(4000-lq):(5999-lq)]] # this sucks
 
-        await msg.edit(content=f"`{query}`\n{response[:(1999)]}")
+        await msg.edit(content=f"`{query}`\n{response[:(1999-lq)]}")
         for remainder in remaining:
             if remainder != "":
                 await channel.send(remainder)
