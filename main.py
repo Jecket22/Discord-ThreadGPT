@@ -179,13 +179,6 @@ class ThreadModal(discord.ui.Modal, title="Create a conversation with ChatGPT"):
         style=discord.TextStyle.short,
         required=False
     )
-    thread_role = discord.ui.TextInput(
-        label="ChatGPT's role (Optional)",
-        placeholder="Assistant",
-        max_length=30,
-        style=discord.TextStyle.short,
-        required=False
-    )
     thread_base_prompt = discord.ui.TextInput(
         label="Base prompt (Optional, not shown)",
         placeholder="You are ChatGPT, a large language model trained by OpenAI. Respond conversationally.",
@@ -209,7 +202,7 @@ class ThreadModal(discord.ui.Modal, title="Create a conversation with ChatGPT"):
         try:
             thread = await msg.create_thread(name=threadName, auto_archive_duration=1440)
             thread_msg = await thread.send("Please wait a moment while I generate a response...")
-            await discordAskGPT(thread_msg, self.thread_input.value, self.thread_role.value, self.thread_base_prompt.value, usr=interaction.user)
+            await discordAskGPT(thread_msg, self.thread_input.value, self.thread_base_prompt.value, usr=interaction.user)
         except Exception as e:
             await msg.edit(content=errHandler(e))
 
